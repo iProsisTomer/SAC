@@ -12,13 +12,13 @@
 		{
 			"kind": "main",
 			"tag": "com-sap-sample-gauge",
-			"url": "https://github.wdf.sap.corp/pages/d023588/orca_customWidget_samples/gauge/webcomponent.js",
+			"url": "https://iprosistomer.github.io/SAC/webcomponent.js",
 			"integrity": "sha256-XqSGKI4ZczQZMybktv3B28NF8/Quuif+F2/tkCRDkxg="
 		},
 		{
 			"kind": "styling",
 			"tag": "com-sap-sample-gauge-aps",
-			"url": "https://github.wdf.sap.corp/pages/d023588/orca_customWidget_samples/gauge/aps_webcomponent.js",
+			"url": "https://iprosistomer.github.io/SAC/aps_webcomponent.js",
 			"integrity": "sha256-DaurM6nR3pUTok+WLC4Fb2mLV0FfmVt66rZKcQ51KMI="
 		}
 	],

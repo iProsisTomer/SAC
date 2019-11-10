@@ -1,6 +1,6 @@
-(function()  {
-let tmpl = document.createElement('template');
-tmpl.innerHTML = `
+(function() {
+  let tmpl = document.createElement("template");
+  tmpl.innerHTML = `
 		<form id="form">
 			<fieldset>
 				<legend>Gauge Box Properties</legend>
@@ -23,49 +23,60 @@ tmpl.innerHTML = `
 		</form>
 `;
 
-class GaugeAps extends HTMLElement {
-		  constructor() {
-		    super();
-		    this._shadowRoot = this.attachShadow({mode: 'open'});
-		    this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
-		    this._shadowRoot.getElementById("form").addEventListener("submit", this._submit.bind(this));
-		  }
+  class GaugeAps extends HTMLElement {
+    constructor() {
+      super();
+      this._shadowRoot = this.attachShadow({ mode: "open" });
+      this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
+      this._shadowRoot
+        .getElementById("form")
+        .addEventListener("submit", this._submit.bind(this));
+    }
 
-		  _submit(e) {
-		    	e.preventDefault();
-				this.dispatchEvent(new CustomEvent('propertiesChanged', { detail: { properties: {
-					val: this.val,
-					look: this.look
-				}}}));
-				return false;
-		  }
+    _submit(e) {
+      e.preventDefault();
+      this.dispatchEvent(
+        new CustomEvent("propertiesChanged", {
+          detail: {
+            properties: {
+              val: this.val,
+              look: this.look
+            }
+          }
+        })
+      );
+      return false;
+    }
 
-		  get val() {
-			 return this._shadowRoot.getElementById("aps_val").value ;
-	      }
+    get val() {
+      return this._shadowRoot.getElementById("aps_val").value;
+    }
 
-		  set val(value) {
-			  this._shadowRoot.getElementById("aps_val").value = value;
-		  }
+    set val(value) {
+      this._shadowRoot.getElementById("aps_val").value = value;
+    }
 
-		  get look() {
-				 return this._shadowRoot.querySelector("input[name='aps_look']:checked").value;
-		      }
+    get look() {
+      return this._shadowRoot.querySelector("input[name='aps_look']:checked")
+        .value;
+    }
 
-		 set look(value) {
-			 this._shadowRoot.querySelector("input[name='aps_look'][value='" + value + "']").checked = "checked";
-		 }
+    set look(value) {
+      this._shadowRoot.querySelector(
+        "input[name='aps_look'][value='" + value + "']"
+      ).checked = "checked";
+    }
 
-		  static get observedAttributes() {
-			  return ['val', 'look'];
-	      }
+    static get observedAttributes() {
+      return ["val", "look"];
+    }
 
-		  attributeChangedCallback(name, oldValue, newValue) {
-			 if (oldValue != newValue) {
-				  this[name] = newValue;
-			 }
-		  }
-}
+    attributeChangedCallback(name, oldValue, newValue) {
+      if (oldValue != newValue) {
+        this[name] = newValue;
+      }
+    }
+  }
 
-customElements.define('com-sap-sample-gauge-aps', GaugeAps);
+  customElements.define("com-sap-sample-gauge-aps", GaugeAps);
 })();
