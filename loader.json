@@ -4,7 +4,7 @@
 	"name": "loader",
 	"description": "loader",
 	"newInstancePrefix": "loader",
-	"icon": " https://annakrasnitski.github.io/ColoredBox/icon.png",
+	"icon": " https://iprosistomer.github.io/SAC/icon.png",
 	"vendor": "Sample",
 	"eula": "",
 	"license": "",
@@ -12,21 +12,21 @@
 		{
 			"kind": "main",
 			"tag": "com-sample-box",
-			"url": " https://annakrasnitski.github.io/ColoredBox/box.js",
+			"url": " https://iprosistomer.github.io/SAC/loader.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "styling",
 			"tag": "com-sample-box-sps",
-			"url": " https://annakrasnitski.github.io/ColoredBox/box_sps.js",
+			"url": " https://iprosistomer.github.io/SAC/loader_sps.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "builder",
 			"tag": "com-sample-box-sps",
-			"url": " https://annakrasnitski.github.io/ColoredBox/box_bps.js",
+			"url": " https://iprosistomer.github.io/SAC/loader_bps.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
