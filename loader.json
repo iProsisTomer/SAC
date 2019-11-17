@@ -1,0 +1,105 @@
+{
+	"id": "com.sample.box",
+	"version": "1.0.0",
+	"name": "loader",
+	"description": "loader",
+	"newInstancePrefix": "loader",
+	"icon": " https://annakrasnitski.github.io/ColoredBox/icon.png",
+	"vendor": "Sample",
+	"eula": "",
+	"license": "",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-sample-box",
+			"url": " https://annakrasnitski.github.io/ColoredBox/box.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		},
+		{
+			"kind": "styling",
+			"tag": "com-sample-box-sps",
+			"url": " https://annakrasnitski.github.io/ColoredBox/box_sps.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		},
+		{
+			"kind": "builder",
+			"tag": "com-sample-box-sps",
+			"url": " https://annakrasnitski.github.io/ColoredBox/box_bps.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {
+		"color": {
+			"type": "string",
+			"description": "Background color",
+			"default": "'white'"
+		},
+		"value": {
+			"type": "string",
+			"description": "value",
+			"default": "'44'"
+		},
+		"opacity": {
+			"type": "number",
+			"description": "Opacity",
+			"default": "1"
+		},
+		"width": {
+			"type": "integer",
+			"default": 500
+		},
+		"height": {
+			"type": "integer",
+			"default": 600
+		}
+	},
+	"methods": {
+		"setColor": {
+			"description": "Sets the background color.",
+			"parameters": [
+				{
+					"name": "newColor",
+					"type": "string",
+					"description": "The new background color"
+				}
+			],
+			"body": "this.color = newColor;"
+		},
+		"getColor": {
+			"returnType": "string",
+			"description": "Returns the background color.",
+			"body": "return this.color;"
+		},
+
+
+		"setValue": {
+			"description": "Sets the background color.",
+			"parameters": [
+				{
+					"name": "newValue",
+					"type": "string",
+					"description": "The new value"
+				}
+			],
+			"body": "this.value = newValue;"
+		},
+		"getValue": {
+			"returnType": "string",
+			"description": "Returns tvalue.",
+			"body": "return this.value;"
+		}
+
+		
+
+	},
+	"events": {
+		"onClick": {
+			"description": "Called when the user clicks the Box."
+		}
+	}
+}
+
+ 
