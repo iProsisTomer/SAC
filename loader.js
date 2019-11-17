@@ -1087,7 +1087,7 @@
   
 	`;
 
-  class Box extends HTMLElement {
+  class loader extends HTMLElement {
     constructor() {
       super();
       let shadowRoot = this.attachShadow({ mode: "open" });
