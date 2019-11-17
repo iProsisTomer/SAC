@@ -1114,5 +1114,5 @@
     }
   }
 
-  customElements.define("com-sample-box", Box);
+  customElements.define("com-sample-loader", loader);
 })();

@@ -3,7 +3,7 @@
   template.innerHTML = `
 		<form id="form">
 			<fieldset>
-      <legend>Box Properties</legend>
+      <legend>loader Properties</legend>
 				<table>
 					<tr>
 						<td>Opacity</td>
@@ -21,7 +21,7 @@
 		</style>
 	`;
 
-  class BoxBps extends extends HTMLElement {
+  class loaderBps extends extends HTMLElement {
     constructor() {
       super();
       this._shadowRoot = this.attachShadow({ mode: "open" });
@@ -55,5 +55,5 @@
     
   }
 
-  customElements.define("com-sample-box-Bps", BoxBps);
+  customElements.define("com-sample-loader-Bps", loaderBps);
 })();
