@@ -1,5 +1,5 @@
 {
-	"id": "com.sample.box",
+	"id": "com.sample.loader",
 	"version": "1.0.0",
 	"name": "loader",
 	"description": "loader",
@@ -11,21 +11,21 @@
 	"webcomponents": [
 		{
 			"kind": "main",
-			"tag": "com-sample-box",
+			"tag": "com-sample-loader",
 			"url": " https://iprosistomer.github.io/SAC/loader.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "styling",
-			"tag": "com-sample-box-sps",
+			"tag": "com-sample-loader-sps",
 			"url": " https://iprosistomer.github.io/SAC/loader_sps.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "builder",
-			"tag": "com-sample-box-sps",
+			"tag": "com-sample-loader-sps",
 			"url": " https://iprosistomer.github.io/SAC/loader_bps.js",
 			"integrity": "",
 			"ignoreIntegrity": true
