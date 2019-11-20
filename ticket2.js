@@ -1,7 +1,9 @@
 (function() {
   let template = document.createElement("template");
   template.innerHTML = `
-		<style>
+    <style>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
     // (Opinionated BEM: blockName-elementName--modifier)
 
     /* Colors */
