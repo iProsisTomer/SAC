@@ -71,15 +71,6 @@
       position: relative;
     }
     .info::before,
-    .info::after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background-color: #D8E1E5;
-    }
     .info::before {
       top: 0;
     }
@@ -124,11 +115,7 @@
           <dt>Price</dt>
           <dd>200$</dd>
         </div>
-      </dl>
-      
-
-        <button  class="button" onclick="window.location.href = 'https://w3docs.com';">Company Site</button>
-            
+      </dl> 
     </div>
   </div>
    
