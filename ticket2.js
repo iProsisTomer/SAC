@@ -2,127 +2,235 @@
   let template = document.createElement("template");
   template.innerHTML = `
 		<style>
+    // (Opinionated BEM: blockName-elementName--modifier)
+
+    /* Colors */
+    $color-primary: #25293c;
+    $color-highlight: #f03f55;
+    $color-white: #fff;
+    $color-black: #222;
+    $color-gray: #ccc;
+    $color-text: #444;
+    $color-text-secondary: lighten($color-text, 30%);
+    
+    /* Page */
+    html {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      color: $color-text;
+      background: linear-gradient(60deg,
+        darken($color-primary, 10%),
+        lighten($color-primary, 10%)
+      );
+    }
+    
     body {
-      background: #e2c02d;
+      line-height: 1.5;
     }
     
-    .plane {
+    hr {
+      width: 100%;
+      margin: 1.5em 0;
+      border: 0;
+      border-bottom: 1px dashed $color-gray;
+    }
+    
+    .hr--invisible {
+      border-bottom-color: transparent;
+    }
+    
+    /* Boarding Pass */
+    .boardingPass {
+      width: 400px;
+      box-shadow: -3px 3px 5px rgba(0, 0, 0, .3);
+      border-radius: 4px;
+    }
+    
+    /* Section */
+    /** Label **/
+    .section-label {
       display: block;
-      width: 126px;
-      height: 43px;
-      margin: 100px auto;
-      animation: flight 10s linear infinite;
+      text-transform: uppercase;
+      font-size: .8rem;
+      color: $color-text-secondary;
     }
     
-    .plane svg {
-      animation: plane-stutter 5s infinite;
+    /** Icon **/
+    .boardingPass-icon {
+      flex-grow: .5;
+      color: $color-highlight;
     }
     
-    .smoke1 {
-      animation: smoke 1s infinite;
+    /* Header */
+    .boardingPass-header {
+      padding: .5em 2em;
+      background: linear-gradient(60deg, 
+        darken($color-highlight, 10%), 
+        lighten($color-highlight, 10%)
+      );
+      border-radius: inherit;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      color: $color-white;
     }
     
-    .smoke2 {
-      animation: smoke 1s infinite;
-      animation-delay: 0.4s;
+    .boardingPass-airline {
+      margin: 0;
+      font-style: italic;
     }
     
-    .smoke3 {
-      animation: smoke 1s infinite;
-      animation-delay: 0.2s;
+    /* Main */
+    .boardingPass-main {
+      padding: 2em;
+      background: $color-white;
     }
     
-    .smoke4 {
-      animation: smoke 1s infinite;
-      animation-delay: 0.7s;
+    .boardingPass-departur-IATA,
+    .boardingPass-arrival-IATA {
+      display: inline-block;
+      line-height: 1;
+      font-size: 4rem;
     }
     
-    .path {
-      animation: draw 0.2s linear infinite;
-    }
-     
-     @keyframes draw {
-      50% {
-        stroke-dashoffset: 0;
-      }
+    .boardingPass-transport {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     
-    @keyframes plane-stutter {
-      0% {
-        transform: translateY(100%);
-      }
-      
-      25% {
-        transform: translateY(20%);
-      }
-      
-       50% {
-        transform: translateY(80%);
-      }
-      
-      75% {
-        transform: translateY(0%);
-      }
-      
-      100% {
-        transform: translateY(100%);
-      }
+    .boardingPass-transport-icon {
+      transform: rotate(90deg);
+      color: $color-text-secondary;
+      font-size: 36px;
     }
     
-    @keyframes smoke {
-      0% {
-        transform: translateX(100%);
-      }
-      
-      70% {
-        opacity: 0.8;
-      }
-      
-      100% {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
+    /* Footer */
+    .boardingPass-footer {
+      padding: 0 2em 2em;
+      background: $color-white;
+      border-radius: inherit;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
     }
     
-    @keyframes plane-stutter {
-      0% {
-        transform: translateY(100%);
-      }
-      
-      25% {
-        transform: translateY(20%);
-      }
-      
-       50% {
-        transform: translateY(80%);
-      }
-      
-      75% {
-        transform: translateY(0%);
-      }
-      
-      100% {
-        transform: translateY(100%);
-      }
+    .boardingPass-qrCode {
+      height: 40px;
+      width: 100%;
+      background: repeating-linear-gradient(to right, 
+        $color-black, $color-black 2%,
+        transparent 2%, transparent 3%,
+        $color-black 3%, $color-black 4%,
+        transparent 4%, transparent 6%,
+        $color-black 6%, $color-black 7%,
+        transparent 7%, transparent 8%,
+        $color-black 8%, $color-black 10%,
+        transparent 10%, transparent 11%
+      );
     }
-    
-    @keyframes flight {
-      0% {
-        transform: translateX(-300%);
-      }
-      
-      100% {
-        transform: translateX(400%);
-      }
-    }
-    
     </style> 
     
-
-    .<div class="plane">
-    <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="-332 285.2 126.6 43.8"><style>.st0{fill:none;stroke:#C29924;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .st1{fill:#E2C02D;stroke:#C29924;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}</style><path class="st0 path" stroke-dasharray="12" stroke-dashoffset="12" d="M-209.5,306v12"/><path class="st0 path" stroke-dasharray="12" stroke-dashoffset="12" d="M-209.5,305.9v-12"/><path class="st1" d="M-215.4 299.4c4.9 0 8.8 2.9 8.8 6.6 0 3.7-3.9 6.6-8.8 6.6"/><path class="st0" d="M-292.9 308.5h-2.4c-5.8 0-10.5-5.7-10.5-11.5v-4.1c0-3.6 3-6.6 6.6-6.6 3.4 0 6.2 2.8 6.2 6.2v16h.1z"/><path class="st1" d="M-292.9 292.6l7.8 6.6"/><path class="st0" d="M-224.7 318.3h-37.5s2.3-4.9 18.6-4.9 18.9 4.9 18.9 4.9zm0-26.6h-37.5s2.3-4.9 18.6-4.9 18.9 4.9 18.9 4.9z"/><path class="st0" d="M-256 314.4l-36.8-5.9.3-9.1h43.8v1.2c.3 3.7 3.5 6.7 7.3 6.7s6.9-2.8 7.3-6.5v-1.4h18.8v13.3l-14.3 2.5M-252.4 313.8v-22.1"/><path class="st0" d="M-234.6 313.8v-22.1l-17.6 22.2"/><circle class="st0" cx="-218.9" cy="323.8" r="4"/><line class="st0 smoke smoke1" x1="-320.1" y1="302.7" x2="-326.5" y2="302.7"/><path class="st0" d="M-215.8,313.4l-3.1,10.4l-3.6-9.4 M-292.6,299.4h-17.6 M-224.7,299.4v-7.7l-5.7,7.7"/><line class="st0 smoke smoke2" x1="-324.4" y1="297.4" x2="-330.8" y2="297.4"/><line class="st0 smoke smoke3" x1="-317.7" y1="292.2" x2="-324.1" y2="292.2"/><line class="st0 smoke smoke4" x1="-312.5" y1="295.9" x2="-318.9" y2="295.9" /></svg>
-    </div>
+    <div class="boardingPass">
+    <header class="boardingPass-header">
+      <h1 class="boardingPass-airline">Airline</h1>
+    </header>
     
+    <main class="boardingPass-main">
+      <div class="row">
+        <section class="boardingPass-departur col-xs">
+          <span class="section-label">London, UK</span>
+          <span class="boardingPass-departur-IATA">LDN</span>	
+        </section>
+  
+        <section class="boardingPass-transport boardingPass-icon col-xs">
+          <i class="boardingPass-transport-icon material-icons">airplanemode_active</i>
+        </section>
+  
+        <section class="boardingPass-arrival col-xs">
+          <span class="section-label">Marseille, FR</span>
+          <span class="boardingPass-arrival-IATA">MRS</span>	
+        </section>
+      </div>
+      
+      <hr class="hr--invisible" />
+    
+      <div class="row">
+        <section class="boardingPass-icon col-xs">
+          <i class="material-icons">event</i>
+        </section>
+        
+        <section class="boardingPass-date col-xs">
+          <span class="section-label">Date</span>
+          <span>4 Nov</span>		
+        </section>
+  
+        <section class="boardingPass-departurTime col-xs">
+          <span class="section-label">Departur</span>
+          <span>10:00</span>	
+        </section>
+  
+        <section class="boardingPass-arrivalTime col-xs">
+          <span class="section-label">Arrival</span>
+          <span>12:05</span>	
+        </section>
+      </div>
+      
+      <hr />
+      
+      <div class="row">
+        <section class="boardingPass-icon col-xs">
+          <i class="material-icons">flight_takeoff</i>	
+        </section>
+        
+        <section class="boardingPass-flight col-xs">
+          <span class="section-label">Flight</span>
+          <span>EZY147</span>		
+        </section>
+  
+        <section class="boardingPass-terminal col-xs">
+          <span class="section-label">Terminal</span>
+          <span>North</span>		
+        </section>
+  
+        <section class="boardingPass-gate col-xs">
+          <span class="section-label">Gate</span>
+          <span>58</span>	
+        </section>
+      </div>
+      
+      <hr />
+      
+      <div class="row">
+        <section class="boardingPass-icon col-xs">
+          <i class="material-icons">account_circle</i>
+        </section>
+  
+        <section class="boardingPass-passenger col-xs">
+          <span class="section-label">Passenger</span>
+          <span>Johan MOUCHET</span>	
+        </section>
+  
+        <section class="boardingPass-seat col-xs">
+          <span class="section-label">Seat</span>
+          <span>17A</span>	
+        </section>
+  
+        <section class="boardingPass-class col-xs">
+          <span class="section-label">Class</span>
+          <span>E</span>	
+        </section>
+      </div>
+    </main>
+      
+    <footer class="boardingPass-footer">
+      <div class="row">
+        <div class="boardingPass-qrCode col-xs"></div>
+      </div>
+    </footer>
+  </div>
       
    
   
