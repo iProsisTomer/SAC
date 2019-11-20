@@ -9,6 +9,7 @@
       box-sizing: border-box;
     }
     .card {
+      height:500px;
       margin: 20px;
       width: 300px;
       border-radius: 4px;
@@ -42,7 +43,7 @@
       display: block;
     }
     .section__airport {
-      font-size: 60px;
+      font-size: 45px;
       display: inline-block;
       width: 49%;
       line-height: 1;
@@ -88,7 +89,7 @@
       color: #D8E1E5;
     }
     .info__section dd {
-      font-size: 40px;
+      font-size: 25px;
     }
     .info__section dt:not(:first-child) {
       margin-top: 20px;
