@@ -3,25 +3,23 @@
   template.innerHTML = `
 		<form id="form">
 			<fieldset>
-      <legend>ticket2 Properties</legend>
+      <legend>Box Properties</legend>
 				<table>
 					<tr>
-						<td>Opacity</td>
-						<td><input id="bps_opacity" type="text" size="5" maxlength="5"></td>
+						<td>Color</td>
+						<td><input id="sps_color" type="text" size="40" maxlength="40"></td>
+          </tr>
+          <tr>
+						<td>Value</td>
+						<td><input id="sps_value" type="text" size="40" maxlength="40"></td>
 					</tr>
 				</table>
 				<input type="submit" style="display:none;">
 			</fieldset>
 		</form>
-		<style>
-		:host {
-			display: block;
-			padding: 1em 1em 1em 1em;
-		}
-		</style>
 	`;
 
-  class ticket2Bps extends extends HTMLElement {
+  class BoxSps extends HTMLElement {
     constructor() {
       super();
       this._shadowRoot = this.attachShadow({ mode: "open" });
@@ -37,23 +35,28 @@
         new CustomEvent("propertiesChanged", {
           detail: {
             properties: {
-              opacity: this.opacity
+              color: this.color
             }
           }
         })
       );
     }
 
-    set opacity(newOpacity) {
-      this._shadowRoot.getElementById("bps_opacity").value = newOpacity;
+    set color(newColor) {
+      this._shadowRoot.getElementById("sps_color").value = newColor;
     }
 
-    get opacity() {
-      return this._shadowRoot.getElementById("bps_opacity").value;
+    get color() {
+      return this._shadowRoot.getElementById("sps_color").value;
+    }
+    set vale(newVale) {
+      this._shadowRoot.getElementById("sps_value").value = newVale;
     }
 
-    
+    get vale() {
+      return this._shadowRoot.getElementById("sps_value").value;
+    }
   }
 
-  customElements.define("com-sample-ticket2-Bps", loaderBps);
+  customElements.define("com-sample-box-sps", BoxSps);
 })();
