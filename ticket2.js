@@ -22,6 +22,7 @@
 .image {
   width: 100%;
   border-radius: 4px;
+ 	height:250px;
 }
 .button {
   background-color: #3559a5;
