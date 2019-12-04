@@ -146,8 +146,8 @@
           <dt>Price</dt>
           <dd>350$</dd>
 
-          <dt>Gate</dt>
-          <dd>3</dd>
+          <dt>Time</dt>
+          <dd>20:00</dd>
         </div>
       </dl>
      
