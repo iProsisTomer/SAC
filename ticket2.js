@@ -144,7 +144,7 @@
         </div>
         <div class="info__section">
           <dt>Price</dt>
-          <dd>350$</dd>
+          <dd>370$</dd>
 
           <dt>Time</dt>
           <dd>20:00</dd>
